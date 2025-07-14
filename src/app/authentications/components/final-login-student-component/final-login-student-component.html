@@ -1,0 +1,18 @@
+<app-navbar-component/>
+
+<main>
+        <div class="card">
+            <div class="icon">🔒</div>
+            <h2>Vérification</h2>
+            <p>Veuillez saisir le code de vérification reçu</p>
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <label for="code">Code de vérification</label>
+                <input type="text" id="code" placeholder="Entrez votre code" formControlName="code" required>
+
+                <button type="submit">🔍 Valider le code</button>
+            </form>
+            <p class="resend-text">
+                Vous n'avez pas reçu de code ? <a (click)="resendCode()">Renvoyer le code</a>
+            </p>
+        </div>
+    </main>

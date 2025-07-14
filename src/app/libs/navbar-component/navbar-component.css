@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    background: white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    gap: 0.5rem;
+    color: #2c2c2c;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: clamp(1rem, 4vw, 1.2rem);
+    color: #0a3d91;
+    white-space: nowrap;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+nav button {
+    background: none;
+    border: 2px solid #0a3d91;
+    border-radius: 6px;
+    padding: 0.4rem 0.8rem;
+    color: #0a3d91;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    font-size: clamp(0.8rem, 3vw, 1rem);
+}
+
+nav .active {
+    background-color: #0a3d91;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+nav button:hover:not(.active) {
+    background-color: #e0eaff;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px);
+    padding: 1rem;
+}
+
+
+/* Specific mobile adjustments */
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    nav {
+        justify-content: center;
+    }
+    
+    .login-card {
+        width: 100%;
+        margin: 0.5rem;
+    }
+}

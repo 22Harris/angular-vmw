@@ -1,0 +1,17 @@
+<app-navbar-component/>
+
+<main>
+        <div class="login-card">
+            <h2>Connexion Étudiant</h2>
+            <p>Veuillez vous connecter avec vos identifiants</p>
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <label for="email">Adresse Email</label>
+                <input type="email" id="email" placeholder="votre-email@example.com" formControlName="email" required>
+
+                <label for="matricule">IM (Identifiant/Matricule)</label>
+                <input type="text" id="matricule" placeholder="Votre identifiant matricule" formControlName="IM" required>
+
+                <button type="submit">✅ Valider</button>
+            </form>
+        </div>
+</main>
