@@ -1,9 +1,15 @@
+<header>
+  <div class="logo">📋 Application de Vote Étudiant</div>
+  <nav>
+    @switch (router.routerState.snapshot.url) {
+    @case('/vms/initial-login-student') {
+    <button class="active">Connexion</button>
+    <button>Vérification</button>
+    } @case ('/vms/final-login-student') {
+    <button class="active">Connexion</button>
+    <button class="active">Vérification</button>
+    } }
 
-    <header>
-            <div class="logo">📋 Application de Vote Étudiant</div>
-            <nav>
-                <button class="active">Connexion</button>
-                <button>Vérification</button>
-                <button>Vote</button>
-            </nav>
-    </header>
+    <button>Vote</button>
+  </nav>
+</header>
