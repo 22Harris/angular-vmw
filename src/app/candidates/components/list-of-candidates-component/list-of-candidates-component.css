@@ -69,7 +69,7 @@ main {
 }
 
 .vote-submit {
-    background-color: #6fc98f;
+    background-color: rgb(101, 185, 178);
     color: white;
     border: none;
     padding: 0.8rem;
@@ -84,7 +84,7 @@ main {
 .vote-submit:hover {
     background: linear-gradient(135deg, #58b57a, #4a90e2);
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(111, 201, 143, 0.3);
+box-shadow: 0 6px 16px rgba(111, 201, 143, 0.3);
 }
 
 /* Conteneur scrollable */
@@ -93,7 +93,7 @@ main {
     overflow-y: auto;
     margin-bottom: 1rem;
     scrollbar-width: thin;
-    scrollbar-color: #6fc98f #f0f0f0;
+    scrollbar-color: rgb(101, 185, 178) #f0f0f0;
 }
 
 .candidates-scroll-container::-webkit-scrollbar {
@@ -114,6 +114,7 @@ main {
 .candidate-container {
     display: block;
     margin-bottom: 0.8rem;
+    position: relative;
 }
 
 .candidate-checkbox {
@@ -133,6 +134,11 @@ main {
     background: white;
     cursor: pointer;
     transition: all 0.2s ease;
+}
+
+.candidate-container:hover .candidate-information {
+    border-color: #c1e5d0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
 .candidate-checkbox:checked + .candidate-information {
@@ -163,6 +169,10 @@ main {
     display: flex;
     flex-direction: column;
     margin-bottom: 0.3rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #0d1f31;
 }
 
 .candidate-name strong {
@@ -194,7 +204,7 @@ main {
 
 .candidate-post {
     padding: 0.3rem 0.8rem;
-    background: linear-gradient(135deg, #4a90e2, #3a7bc8);
+    background: rgb(238, 155, 30);
     border-radius: 4px;
     font-weight: bold;
     font-size: 0.8rem;
