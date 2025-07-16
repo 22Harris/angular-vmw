@@ -5,11 +5,15 @@
     @case('/vms/initial-login-student') {
     <button class="active">Connexion</button>
     <button>Vérification</button>
+    <button>Vote</button>
     } @case ('/vms/final-login-student') {
     <button class="active">Connexion</button>
     <button class="active">Vérification</button>
-    } }
-
     <button>Vote</button>
+    } @default {
+    <button class="active">Connexion</button>
+    <button class="active">Vérification</button>
+    <button class="active">Vote</button>
+    }}
   </nav>
 </header>
