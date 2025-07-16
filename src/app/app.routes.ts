@@ -2,6 +2,11 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
     {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'vms',
+    },
+    {
         path: 'vms',
         loadChildren: () => import('../app/authentications/authentications.routes').then((m) => m.AuthenticationStudentRoutes),
     },

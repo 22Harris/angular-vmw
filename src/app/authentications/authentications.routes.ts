@@ -4,6 +4,11 @@ import { FinalLoginStudentComponent } from "./components/final-login-student-com
 
 export const AuthenticationStudentRoutes: Route[] = [
   {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'initial-login-student'
+  },
+  {
     path: 'initial-login-student',
     component: InitialLoginStudentComponent
   },
