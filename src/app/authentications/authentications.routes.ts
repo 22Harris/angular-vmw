@@ -1,6 +1,7 @@
 import { Route } from "@angular/router";
 import { InitialLoginStudentComponent } from "./components/initial-login-student-component/initial-login-student-component";
 import { FinalLoginStudentComponent } from "./components/final-login-student-component/final-login-student-component";
+import { AuthGuardOnFinalLoginStudent } from "../../auth.guard";
 
 export const AuthenticationStudentRoutes: Route[] = [
   {
@@ -14,6 +15,7 @@ export const AuthenticationStudentRoutes: Route[] = [
   },
   {
     path: 'final-login-student',
-    component: FinalLoginStudentComponent
+    component: FinalLoginStudentComponent,
+    canActivate: [AuthGuardOnFinalLoginStudent]
   }
 ];

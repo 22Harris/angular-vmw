@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { AuthGuardOnElectionCandidates } from '../auth.guard';
 
 export const routes: Routes = [
     {
@@ -13,5 +14,6 @@ export const routes: Routes = [
     {
         path: 'election',
         loadChildren: () => import('../app/candidates/candidates.routes').then((r) => r.CandidateElectionRoot),
+        canActivate: [AuthGuardOnElectionCandidates]
     }
 ];
