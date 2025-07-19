@@ -47,4 +47,11 @@ export class LocalStorageService{
       localStorage.removeItem(this.studentEmail);
       localStorage.removeItem(this.studentIM);
     }
+
+    initializeLocalStorage(){
+      localStorage.removeItem(this.studentEmail);
+      localStorage.removeItem(this.studentIM);
+      localStorage.removeItem(this.studentId);
+      localStorage.removeItem(this.studentToken)
+    }
 }

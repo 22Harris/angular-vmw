@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavbarComponent } from '../../../libs/navbar-component/navbar-component';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { LocalStorageService } from '../../services/localstorage.service';
 import { CommonModule } from '@angular/common';
 import { AuthenticationService } from '../../services/authentication.service';
 import { InitialLoginStudentInterface } from '../../types/initial-login-student.interfaces';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-final-login-student-component',
@@ -12,18 +13,28 @@ import { InitialLoginStudentInterface } from '../../types/initial-login-student.
   templateUrl: './final-login-student-component.html',
   styleUrl: './final-login-student-component.css'
 })
-export class FinalLoginStudentComponent {
+export class FinalLoginStudentComponent implements OnInit {
   form: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
     private localStorageService: LocalStorageService,
     private authenticationService: AuthenticationService,
+    private router: Router,
   ){
     this.form = this.formBuilder.group({
       code: ['', Validators.required],
     });
   }
+
+  ngOnInit(): void {
+      if(this.localStorageService.getIdOnLocalStorage() !==null
+        && this.localStorageService.getTokenOnLocalStorage() !==null
+      ){
+        this.router.navigate(['election/election-posts']);
+      }
+    }
+
 
   onSubmit(): void{
     if(this.form.invalid){
@@ -38,7 +49,7 @@ export class FinalLoginStudentComponent {
         if(response.success){
           this.localStorageService.setTokenOnLocalStorage(response.data.token);
           this.localStorageService.deleteEmailAndIMOnLocalStorage();
-          console.log('-------token inséré');
+          this.router.navigate(['election/election-posts']);
         }else{
           console.error('Erreur de connexion:', response.message);
 

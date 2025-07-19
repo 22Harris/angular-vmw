@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavbarComponent } from '../../../libs/navbar-component/navbar-component';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
   templateUrl: './initial-login-student-component.html',
   styleUrl: './initial-login-student-component.css'
 })
-export class InitialLoginStudentComponent {
+export class InitialLoginStudentComponent implements OnInit{
     form: FormGroup;
 
     constructor(
@@ -27,6 +27,21 @@ export class InitialLoginStudentComponent {
         email: ['', [Validators.email, Validators.required]],
         IM: ['', Validators.required],
       });
+    }
+
+    ngOnInit(): void {
+      // if(this.localStorageService.getIdOnLocalStorage() !==null
+      //   && this.localStorageService.getTokenOnLocalStorage() !==null
+      // ){
+      //   this.router.navigate(['election/election-posts']);
+      // }
+
+      // if(this.localStorageService.getIdOnLocalStorage() !==null
+      //   && this.localStorageService.getIMOnLocalStorage() !== null
+      //   && this.localStorageService.getEmailOnLocalStorage() !== null
+      // ){
+      //   this.router.navigate(['vms/final-login-student']);
+      // }
     }
 
   onSubmit(): void {
