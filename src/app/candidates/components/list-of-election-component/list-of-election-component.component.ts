@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { ElectionInterface } from './../../types/election-list-returned.interface';
+import { Component, OnInit, input } from '@angular/core';
 
 @Component({
   selector: 'app-list-of-election-component',
@@ -6,6 +7,8 @@ import { Component } from '@angular/core';
   templateUrl: './list-of-election-component.component.html',
   styleUrl: './list-of-election-component.component.css'
 })
-export class ListOfElectionComponentComponent {
+export class ListOfElectionComponentComponent{
+  
+  elections = input<ElectionInterface[]>([]);
 
 }
