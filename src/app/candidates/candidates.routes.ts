@@ -13,7 +13,7 @@ export const CandidateElectionRoot: Route[] = [
                 component: CandidateElectionListRootComponent
             },
             {
-                path: 'candidates-vote',
+                path: 'election-posts/:electionId',
                 component: CandidateElectionVoteRootComponent
             }
         ]

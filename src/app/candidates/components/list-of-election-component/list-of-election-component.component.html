@@ -7,7 +7,10 @@
     <form class="vote-form">
       <div class="candidates-scroll-container">
         @for (election of elections(); track election.ID; let i = $index) {
-        <label class="candidate-container">
+        <label
+          class="candidate-container"
+          [routerLink]="['/election/election-posts', election.ID]"
+        >
           <div class="candidate-information">
             <div class="candidate-number">
               <strong>{{ i + 1 }}</strong>
