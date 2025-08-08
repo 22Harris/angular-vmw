@@ -8,7 +8,11 @@
       <div class="candidates-scroll-container">
         @for (candidate of candidates(); track candidate.ID) {
         <label class="candidate-container">
-          <input type="checkbox" class="candidate-checkbox" />
+          <input
+            type="checkbox"
+            class="candidate-checkbox"
+            (change)="onCheckboxChange(candidate.ID, $event)"
+          />
           <div class="candidate-information">
             <div class="candidate-number">
               <strong>{{ candidate.number }}</strong>
