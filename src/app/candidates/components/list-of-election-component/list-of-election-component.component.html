@@ -6,11 +6,11 @@
 
     <form class="vote-form">
       <div class="candidates-scroll-container">
-        @for (election of elections(); track election.ID) {
+        @for (election of elections(); track election.ID; let i = $index) {
         <label class="candidate-container">
           <div class="candidate-information">
             <div class="candidate-number">
-              <strong>{{ election.ID }}</strong>
+              <strong>{{ i + 1 }}</strong>
             </div>
             <div class="candidate-text-content">
               <div class="candidate-name">
