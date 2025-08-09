@@ -4,7 +4,7 @@
     <h2>Vote Étudiant</h2>
     <p>Sélectionnez un ou plusieurs candidats</p>
 
-    <form class="vote-form">
+    <form class="vote-form" (submit)="submitVotes()">
       <div class="candidates-scroll-container">
         @for (candidate of candidates(); track candidate.ID) {
         <label class="candidate-container">

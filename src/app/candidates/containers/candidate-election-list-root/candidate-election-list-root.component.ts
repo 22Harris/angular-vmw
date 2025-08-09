@@ -22,6 +22,4 @@ export class CandidateElectionListRootComponent implements OnInit{
       }
     });
   }
-
-  handleVotesSubmitted(selectedIds: number[]){}
 }

@@ -1,5 +1,6 @@
 import { Component, input, output } from '@angular/core';
 import { CandidateInterface } from '../../types/candidates-list-returned.interfaces';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-of-candidates-component',
@@ -8,9 +9,11 @@ import { CandidateInterface } from '../../types/candidates-list-returned.interfa
   styleUrl: './list-of-candidates-component.css'
 })
 export class ListOfCandidatesComponent{
+
+  constructor(private readonly router: Router){}
   
   candidates = input<CandidateInterface[]>([]);
-  votessubmitted = output<number[]>();
+  votesSubmitted = output<number[]>();
 
   selectedCandidates: number[] = [];
 
@@ -28,8 +31,9 @@ export class ListOfCandidatesComponent{
     }
   }
 
-  submitVotes() {   
-    this.votessubmitted.emit(this.selectedCandidates);
+  submitVotes() {
+    this.votesSubmitted.emit(this.selectedCandidates);
+    this.router.navigate(['election/election-posts']);
   }
 
 }

@@ -1,3 +1,4 @@
-<app-list-of-candidates-component [candidates]="candidatesList"
-  ><app-list-of-candidates-component />
-</app-list-of-candidates-component>
+<app-list-of-candidates-component
+  [candidates]="candidatesList"
+  (votesSubmitted)="selectedCandidatesById($event)"
+></app-list-of-candidates-component>
