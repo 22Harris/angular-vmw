@@ -33,13 +33,11 @@ export class CandidateElectionVoteRootComponent implements OnInit{
   }
 
   getStudentId():number{
-    const studentId = this.localStorageService.getIMOnLocalStorage();
+    const studentId = this.localStorageService.getIdOnLocalStorage();
     if (studentId === null) {
       throw new Error('studentId est null');
     }
-
-    const studentIdInt = Number.parseInt(studentId, 10);
-    return studentIdInt;
+    return studentId;
   }
 
   ngOnInit(): void {
